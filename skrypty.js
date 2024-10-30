@@ -25,4 +25,5 @@ ajax_get_plik = function(){
     xhr.onerror = function(){
         console.log('Żądanie nie wykonalne');
     }
+    xhr.send();
 }
