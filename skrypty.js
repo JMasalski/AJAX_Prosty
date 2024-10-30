@@ -8,7 +8,8 @@ baseURL = 'http://localhost/GR1_AJAX_prosty/';
 window.onload = function(){
     document.querySelector('#get_plik').addEventListener("click", ajax_get_plik);
     document.querySelector('#get_ob').addEventListener("click", ajax_get_ob);
-    document.querySelector('#post_ob').addEventListener("click", ajax_post_ob);          
+    document.querySelector('#post_ob').addEventListener("click", ajax_post_ob);
+    document.querySelector('#get_baza').addEventListener("click", ajax_get_baza);            
 }
 
 function ajax_get_plik(){
@@ -79,5 +80,10 @@ function ajax_post_ob(){
         console.log('Żądanie nie wykonalne');
     }
     xhr.send(param);
+}
+
+function ajax_get_baza(){
+    let url = new URL('baza.php', baseURL);
+    
 }
 
