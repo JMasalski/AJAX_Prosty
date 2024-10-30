@@ -9,7 +9,8 @@ window.onload = function(){
     document.querySelector('#get_plik').addEventListener("click", ajax_get_plik);
     document.querySelector('#get_ob').addEventListener("click", ajax_get_ob);
     document.querySelector('#post_ob').addEventListener("click", ajax_post_ob);
-    document.querySelector('#get_baza').addEventListener("click", ajax_get_baza);            
+    document.querySelector('#get_baza').addEventListener("click", ajax_get_baza);
+    createBaza();            
 }
 
 function ajax_get_plik(){
@@ -82,8 +83,28 @@ function ajax_post_ob(){
     xhr.send(param);
 }
 
+function createBaza(){
+    let url = "baza.php"
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+
+    xhr.onload = () => {
+        if(xhr.status != 200){
+            console.log(`Błąd ${xhr.status}: ${xhr.statusText}`);
+        }
+        else{
+            document.querySelector('#wynik').innerHTML = xhr.response;
+        }
+    }
+    xhr.onerror = function(){
+        console.log('Żądanie nie wykonalne');
+    }
+    xhr.send();
+
+}
+
+
+
 function ajax_get_baza(){
-    let url = new URL('baza.php', baseURL);
-    
 }
 

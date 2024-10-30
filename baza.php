@@ -23,6 +23,10 @@
         VALUES ('Iksinski', 'Jan', '2019-12-11'),
         ('Nowak', 'Adam', '2019-12-12'),
         ('Kowalski', 'Piotr', '2019-12-13');
+EOT;
+    if ($link->query($sql)) echo "Dane dodane";
+    else echo "Błąd dodawania danych " . $link->error;
 
+    $link->close();
 
 ?>
