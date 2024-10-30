@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <style>
+        fieldset:first-child {
+            background-color: gray;
+            width: 20%;
+        }
+        #wynik {
+            clear: both;
+        }
+    </style>
+    <script src="skrypty.js"></script>
+</head>
+<body>
+    <fieldset>
+        <button type="button" id="get_plik">PLIK</button>
+        <button type="button" id="get_ob">GET_OB</button>
+        <button type="button" id="post_ob">POST_OB</button>
+        <button type="button" id="get_baza">GET-BAZA</button>        
+        <button type="button" id="get_form">GET_FORM</button>
+    </fieldset>
+
+    <form name="form1">
+        <fieldset>
+            <label for="imie">Imię </label>
+            <input type="text" name="imie" id="imie" value="Gall"><br>
+            <label for="nazwisko">Nazwisko 
+                <input type="text" name="nazwisko" id="nazwisko" value="Anonim">
+            </label><br>
+        </fieldset>
+    </form>
+
+    <div id="wynik"></div>
+</body>
+</html>
