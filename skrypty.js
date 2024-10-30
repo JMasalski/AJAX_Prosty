@@ -59,5 +59,25 @@ function ajax_get_ob(){
 
 function ajax_post_ob(){
     let url = "post.php";
+    let param = new FormData();
+    param.append('imie', dane.imie);
+    param.append('nazwisko', dane.nazwisko);
+
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", url);
     
+    xhr.onload = () => {
+        if(xhr.status != 200){
+            console.log(`Błąd ${xhr.status}: ${xhr.statusText}`);
+        }
+        else{
+            document.querySelector('#wynik').innerHTML = xhr.response;
+        }
+    }
+    xhr.onerror = function(){
+        console.log('Żądanie nie wykonalne');
+    }
+    xhr.send(param);
 }
+
